@@ -18,12 +18,12 @@
 (function($) {
 	
 	var settings = {
-		'uploadUrl'		 : '/upload', // URL to POST files to
+		'uploadUrl'	 : '/upload', // URL to POST files to
 		'uploaded'       : null, // Callback function fired when files have been uploaded - defaults to methods.uploaded
 		'dropClass' 	 : 'file-drop', // Default class for the drop div
 		'dropHoverClass' : 'file-drop-hover', // Class applied to the drop div when dragging over it
 		'defaultText'  	 : 'Drop your files here!', // Default HTML content for the drop div
-		'hoverText'		 : 'Let go to upload!' // HTML content shown when hovering over the drop div
+		'hoverText'	 : 'Let go to upload!' // HTML content shown when hovering over the drop div
 	};
 	var $this = null;
 	var xhr = new XMLHttpRequest();
@@ -33,14 +33,10 @@
 		init : function(options) { // Initialises the plugin
 			return $(this).each(function() {
 				$this = $(this);
-				if (options) {
-					$.extend(settings, options);
-				}
+				if (options) $.extend(settings, options);
 				
 				// Default callback
-				if (settings.uploaded === null) {
-					settings.uploaded = methods.uploaded;
-				}
+				if (settings.uploaded === null) settings.uploaded = methods.uploaded;
 				
 				if (methods.supported()) {
 					methods.createDropDiv();
