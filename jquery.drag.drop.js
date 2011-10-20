@@ -45,7 +45,7 @@
 			});
 		},
 		supported : function() { // Checks support for functionality
-			return 'draggable' in document.createElement('span');
+			return 'draggable' in document.createElement('span') && xhr.upload;
 		},
 		createDropDiv : function() { // Creates the div that files can be dropped on to
 			$dropDiv = $('<div>').addClass(settings.dropClass)
